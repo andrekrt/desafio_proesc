@@ -18,7 +18,8 @@
               </div>
               <div class="form-group">
                 <label for="description" class="form-label mt-4">Descrição</label>
-                <textarea class="form-control" id="description" name="description" rows="3" value="{{$category->description?$category->description:''}}">
+                <textarea class="form-control" id="description" name="description" rows="3">
+                {{$category->description?$category->description:''}}
                 </textarea>
               </div>
             </fieldset>

@@ -32,7 +32,7 @@
                             {{$produto->price}}
                         </td>
                         <td scope="row">
-                            {{$produto->category_id}}
+                            {{$produto->nome_categoria}}
                         </td>
                         <td scope="row">
                             {{isset($produto->description) ? $produto->description : '-'}}

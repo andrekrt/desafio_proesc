@@ -22,8 +22,9 @@ class ProductController extends Controller
 
    public function listar()
    {
-    $produtos = \App\Models\Product::all();
+    $produtos = \App\Models\Product::join('categories', 'products.category_id', '=', 'categories.id')->select('products.*', 'categories.name as nome_categoria')->get();
     return view('produtos', ['produtos' => $produtos] );
+
    }
 
    public function create()
@@ -48,7 +49,7 @@ class ProductController extends Controller
    public function edit($id)
    {
     $categories = \App\Models\Category::all();
-    $product = $this->objProduct->find($id);
+    $product = $this->objProduct->join('categories', 'products.category_id', '=', 'categories.id')->select('products.*', 'categories.name as nome_categoria')->find($id);
     return view('produtos.edit', ['categories' => $categories, 'product' => $product]);
    }
 

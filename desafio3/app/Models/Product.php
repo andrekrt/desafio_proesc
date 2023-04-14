@@ -11,9 +11,7 @@ class Product extends Model
         'slug',
         'description',
         'price',
-        'category_id',
+        'category_id'
     ];
     protected $table = 'products';
-
-
 }

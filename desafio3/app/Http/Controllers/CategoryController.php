@@ -36,7 +36,7 @@ class CategoryController extends Controller
             'description'=>$request->description
         ]);
         if($category){
-            return redirect('categorias/listar');
+            return redirect('/categorias/listar');
         }
     }
  
@@ -53,12 +53,12 @@ class CategoryController extends Controller
             'slug'=> str_slug($request->name),
             'description'=>$request->description
         ]);
-        return redirect('produtos/listar');
+        return redirect('categorias/listar');
     }
  
     public function destroy($id)
     {
         $category = $this->objCategory->find($id)->delete();
-        return redirect('produtos/listar')->with('msg', 'Categoria excluída com sucesso.');
+        return redirect('categorias/listar')->with('msg', 'Categoria excluída com sucesso.');
     }
 }
